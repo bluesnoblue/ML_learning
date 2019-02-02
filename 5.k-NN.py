@@ -19,7 +19,7 @@ X_test = sc.transform(X_test)
 
 # 模型训练
 from sklearn.neighbors import KNeighborsClassifier
-classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
+classifier = KNeighborsClassifier(n_neighbors = 5)#k值
 classifier.fit(X_train, y_train)
 
 y_pred = classifier.predict(X_test)
@@ -44,7 +44,7 @@ for i,j in enumerate(np. unique(y_set)):
     plt.scatter(X_set[y_set==j,0],X_set[y_set==j,1],
                 c = ListedColormap(('red', 'green'))(i), label=j)
 
-plt.title(' LOGISTIC(Training set)')
+plt.title(' K-NN(Training set)')
 plt.xlabel(' Age')
 plt.ylabel(' Estimated Salary')
 plt.legend()
@@ -63,7 +63,7 @@ for i,j in enumerate(np. unique(y_set)):
     plt.scatter(X_set[y_set==j,0],X_set[y_set==j,1],
                 c = ListedColormap(('red', 'green'))(i), label=j)
 
-plt.title(' LOGISTIC(Test set)')
+plt.title(' K-NN(Test set)')
 plt.xlabel(' Age')
 plt.ylabel(' Estimated Salary')
 plt.legend()
