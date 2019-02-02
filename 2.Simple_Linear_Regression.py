@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
 dataset = pd.read_csv('data_sets/studentscores.csv')
 X = dataset.iloc[ : ,   : 1 ].values
@@ -29,6 +28,7 @@ regressor = regressor.fit(X_train, Y_train)
 #预测结果
 Y_pred = regressor.predict(X_test)
 
+import matplotlib.pyplot as plt
 #训练集结果可视化
 plt.scatter(X_train,Y_train,color = 'red')
 plt.plot(X_train,regressor.predict(X_train),color = 'blue')

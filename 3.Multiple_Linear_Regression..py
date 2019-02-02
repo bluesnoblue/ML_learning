@@ -33,3 +33,5 @@ print(y_pred)
 
 from sklearn.metrics import r2_score #R2 决定系数（拟合优度）
 print(r2_score(Y_test,y_pred))
+
+
